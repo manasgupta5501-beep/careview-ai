@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tv-bg: #07131e;
+  --tv-surface: #0f2334;
+  --tv-card: #142d42;
+  --tv-border: #1f4769;
+  --tv-accent: #38bdf8;
+  --tv-text: #f8fafc;
+}
+
+body {
+  background-color: var(--tv-bg);
+  color: var(--tv-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* TV High-Contrast Focus Ring */
+:focus-visible {
+  outline: 4px solid #38bdf8 !important;
+  outline-offset: 4px !important;
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast :focus-visible {
+  outline: 5px solid #facc15 !important;
+  outline-offset: 4px !important;
+}
+
+/* Custom Scrollbar for 10-foot TV view */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091a29;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
